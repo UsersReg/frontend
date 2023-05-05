@@ -18,4 +18,4 @@ npm run dev || yarn dev
 
 ## Contributors
 
-<a href="https://github.com/UsersReg/graphs/contributors"><img src="https://contrib.rocks/image?repo=UsersReg" /></a>
+<a href="https://github.com/UsersReg/frontend/graphs/contributors"><img src="https://contrib.rocks/image?repo=UsersReg/frontend" /></a>
