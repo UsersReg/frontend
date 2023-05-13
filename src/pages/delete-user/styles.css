@@ -1,0 +1,26 @@
+.delete-user-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
+  height: 100svh;
+  padding: 1rem 0;
+}
+.delete-user-page form {
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #00000050;
+  padding: 2rem 1rem;
+  width: min(550px, 95%);
+  border-radius: 2rem;
+}
+.delete-user-page form footer button {
+  padding: 0.5rem 2rem;
+  margin: 0.2rem;
+}

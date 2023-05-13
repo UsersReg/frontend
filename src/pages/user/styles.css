@@ -1,0 +1,53 @@
+.user-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
+  height: 100svh;
+  padding: 1rem 0;
+}
+.user-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #00000050;
+  padding: 2rem 1rem;
+  width: min(550px, 95%);
+  border-radius: 2rem;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.user-page form section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1;
+}
+.user-page form section > * {
+  text-align: left;
+  width: 100%;
+}
+.user-page form section input {
+  flex: 1;
+}
+.user-page form section:has(input[type="checkbox"]) {
+  flex-wrap: nowrap;
+  flex: 0;
+}
+.user-page form section:has(input[type="checkbox"]) > * {
+  flex: 0;
+  white-space: nowrap;
+}
+.user-page form section small {
+  color: #eb4f34;
+}
+.user-page form footer button {
+  padding: 0.5rem 2rem;
+  margin: 0.2rem;
+}

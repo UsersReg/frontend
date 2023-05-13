@@ -1,0 +1,51 @@
+.home-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-height: 0;
+  height: 100svh;
+  padding: 1rem 0;
+}
+.users-container {
+  flex: 1;
+  max-height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+}
+.users {
+  overflow: auto;
+  min-height: 0;
+  min-width: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  position: relative;
+  flex: 1;
+}
+.users thead {
+  background-color: #000000;
+}
+.users td,
+th {
+  border: 0;
+  outline: 1px solid;
+  min-width: 8rem;
+}
+.users td:not(:last-child),
+th:not(:last-child) {
+  padding: 0.5rem;
+}
+.users tr:nth-child(odd) td,
+th {
+  background-color: #00000050;
+}
+.users td a {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.home-page > a {
+}

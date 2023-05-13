@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+a {
+  font-weight: 500;
+  color: #34a1eb;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+button {
+  border-radius: 0.2rem;
+  border: 1px solid #fff;
+}
+.secondary {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
