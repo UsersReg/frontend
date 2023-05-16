@@ -76,6 +76,12 @@ const User: FC = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          console.log(
+            nameError,
+            emailError,
+            passwordError,
+            confirmPasswordError
+          );
           if (
             !!(nameError || emailError || passwordError || confirmPasswordError)
           )

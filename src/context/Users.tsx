@@ -10,6 +10,7 @@ import {
 } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { AxiosError } from "axios";
 
 interface IUsersContext {
   users: IUser[];
@@ -31,9 +32,15 @@ const UsersProvider: FC<{ children: ReactNode }> = ({ children }) => {
       .get("users")
       .then(({ data }: { data: IUser[] }) => setUsers(data))
       .catch((err) => {
-        setUsers([]);
-        console.error(err.message, err.stack);
-        toast(err.message, { type: "error" });
+        if (err instanceof AxiosError) {
+          const message = err.response?.data?.message ?? err.message;
+          console.error(message, err.stack);
+          toast(message, { type: "error" });
+        } else {
+          setUsers([]);
+          console.error(err.message, err.stack);
+          toast(err.message, { type: "error" });
+        }
       });
   }, []);
 
@@ -54,7 +61,11 @@ const UsersProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
       return data;
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof AxiosError) {
+        const message = err.response?.data?.message ?? err.message;
+        console.error(message, err.stack);
+        toast(message, { type: "error" });
+      } else if (err instanceof Error) {
         console.error(err.message, err.stack);
         toast(err.message, { type: "error" });
       } else {
@@ -82,7 +93,11 @@ const UsersProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
       return data;
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof AxiosError) {
+        const message = err.response?.data?.message ?? err.message;
+        console.error(message, err.stack);
+        toast(message, { type: "error" });
+      } else if (err instanceof Error) {
         console.error(err.message, err.stack);
         toast(err.message, { type: "error" });
       } else {
@@ -100,7 +115,11 @@ const UsersProvider: FC<{ children: ReactNode }> = ({ children }) => {
       toast("User deleted successful", { type: "success" });
       navigate("/");
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof AxiosError) {
+        const message = err.response?.data?.message ?? err.message;
+        console.error(message, err.stack);
+        toast(message, { type: "error" });
+      } else if (err instanceof Error) {
         console.error(err.message, err.stack);
         toast(err.message, { type: "error" });
       } else {
