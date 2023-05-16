@@ -33,7 +33,6 @@ export const validConfirmPassword = (
   confirmPassword: string,
   originalPassword: string
 ) => {
-  console.log(confirmPassword, originalPassword);
   const confirmPasswordSchema = z
     .string({ required_error: "Please, confirm the password!" })
     .min(1, "Please, confirm the password!")
